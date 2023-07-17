@@ -40,7 +40,7 @@ No canto superior direito, ao lado esquerdo da sua foto de perfil da conta do go
 <p align="center"><img width="542" alt="image" src="https://github.com/annamatias/dataengineer-google-cloud/assets/53863170/196173f6-9ca3-421d-bc03-4eec19d29aa0"></p>
 <p align="center">imagem 2 - Alterando nome do projeto e salvando</p>
 
-## Ativando Databricks
+# Ativando Databricks
 
 No canto superior esquerdo, temos um menu bar, acessando ele, vamos atrás do **Databricks**, o GCP te trás opção de fixar para aparecer logo em cima. Eu fixei para encontra-lo com maior facilidade.
 
@@ -97,17 +97,6 @@ Para adicionar, devemos ir no *Espaço de trabalho* e ir na sessão de repositó
 Depois iremos adicionar as informações do repositório, e criar um nono repositório.
 
 <img width="894" alt="image" src="https://github.com/annamatias/dataengineer-google-cloud/assets/53863170/7f775696-4a74-4f59-826c-721b6b0419f8">
-
----
-## Acessando API Spotify
-
-Os dados utilizados nesse projeto são do Spotify, portanto é necessário criar uma conta, acessar esse [link](https://developer.spotify.com/documentation/web-api), seguir os passos descritos, como ler e aceitar os termos e condições
-
-<img width="1363" alt="image" src="https://github.com/annamatias/dataengineer-google-cloud/assets/53863170/d0f7b358-0f90-4c5a-a906-8740cf222f5a">
-
-Feito o passo acima, iremos criar um aplicativo, depois de criar seu aplicativo, você terá acesso às credenciais do aplicativo. Eles serão necessários para a autorização da API para obter um token de acesso.
-Você pode seguir esse passo a passo da própria comunidade: https://developer.spotify.com/documentation/web-api/tutorials/getting-started
-
 
 ---
 
