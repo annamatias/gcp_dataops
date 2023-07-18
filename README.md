@@ -114,11 +114,6 @@ Concluindo o passo acima, já é possível visualizar o nosso repositório e as 
 
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/f03b0445-98b0-4be1-9c97-a309fcb2c593"></p>
 
-### Realizando Pull
-
-Somente seguir o gif abaixo, para realizar o pull após alterações.
-
-<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/c64bd1f3-80c2-49f2-b03d-12a76bffc054"></p>
 
 ## Github Actions
 
@@ -176,6 +171,18 @@ Mas ele está pronto o nosso build, agora com a implementação do código e exe
 <p align="center">imagem 13 - Execução build pylint</p>
 
 # ETL
+
+## Realizando Pull
+
+Somente seguir o gif abaixo, para realizar o pull após alterações.
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/c64bd1f3-80c2-49f2-b03d-12a76bffc054"></p>
+
+## Criando pastas e arquivos dentro do repositório
+
+Exemplo de criação de pastas e notebook dentro de um repositório no Databricks;
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/9154ed17-16a9-4968-bf36-3e1bf5a22041"></p>
 
 ## Criando um notebook
 
