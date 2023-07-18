@@ -7,9 +7,9 @@
 
 # Sobre
 
-<p>O projeto representa todos os processos de DataOps, ele contém CI/CD, criado com o Actions Workflows do GitHub para podermos testar o código após o push. Trazendo mais segurando e uniformidade ao código, evitando futuros erros na execução, e integridade ao dividir o código entre a equipe. Estamos utilizando do Google Cloud Platform, para utilização IaaS (Infraestrutura como Serviço), usufruindo da Compute Engine, Databricks e Storage Cloud.</p>
+<p>O projeto representa todos os processos de DataOps, ele contém CI/CD, criado com o Actions Workflows do GitHub para podermos testar o código após o push. Trazendo mais segurança e uniformidade ao código, evitando futuros erros na execução, e integridade ao dividir o código entre a equipe. Estamos utilizando do Google Cloud Platform, para utilização IaaS (Infraestrutura como Serviço), usufruindo da Compute Engine, Databricks e Storage Cloud.</p>
 <p>O desenvolvimento da ingestão de dados, estaremos utilizando das tecnologias: Python, Pyspark e Delta Lake. Esquematizando a visualização de dados, utilizaremos do próprio Databricks, e finalizando o fluxo de DataOps, ele deve conter Data Observability e Data Monitoring, nossa infraestrutura ela já consta com otimas ferramentas de monitoração da nossa aplicação, e para fecharmos com chave de ouro iremos utilizar dos loggers, para garantir rastreabilidade de erros no nosso código.</p>
-<p>Sem contar que para entregarmos dados com a qualidade, esse projeto conta com boas práticas de Data Quality e testes unitários feito em pyspark, para além de testarmos o resultado esperado e nossas funções, atendermos os pilares de qualidade dos dados, entre eles: precisão, completude, consistência, validade, exclusividade e pontualidade.</p>
+<p>Sem contar que para entregarmos dados com a qualidade, esse projeto conta com boas práticas de Data Quality e testes unitários feito em pyspark, para além de testarmos o resultado esperado em nossas funções, atenderemos os pilares de qualidade dos dados, entre eles: precisão, completude, consistência, validade, exclusividade e pontualidade.</p>
 
 > *Até então, não é ideal utilizar spark para a pequena quantidade de dados, o ideal é acima de GB (Giga Bytes), mas é um projeto, visa trazer aprendizados da vida real, com conteúdo técnico.*
 
