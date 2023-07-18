@@ -93,9 +93,18 @@ Feito os passos acima, ele vai abrir o workspace, conforme dissemos anteriorment
 
 Aqui nesse passo é bem simples. Basta colocar o nome do workspace que deseja, você vai copiar do GCP o ID do projeto e colar lá, e na região SEMPRE busque utilizar `us-central1` porque esse é uma das regiões gratuitas.
 
-Feito isso, você vai finalizar e vai receber um **email**, lá vai ter o link que está apto a mexer no databricks.
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/41cb92e9-ce89-4dcb-9d5f-ee9787e68cc4"></p>
+<p align="center">imagem 9 - Configuração workspace</p>
 
-Acessando o link, vamos criar um cluster, ele já aparece logo no inicio bem grande.
+Feito isso, você vai finalizar e vai receber um **email**, lá vai ter o link que está apto a mexer no databricks, ou então você pode clicar logo em seguida no workspace que criou e aguardar o link ser disponibilizado, conforme exemplo abaixo.
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/d88715ec-1bfd-4d64-8013-0a8e9bb34155"></p>
+<p align="center">imagem 10 - Workspace preparando o link</p>
+
+Acessando o link, vamos criar um cluster, ele já aparece logo no inicio bem grande, ele já vai criar com as configurações necessárias para você mas você pode alterar de acordo com a necessidade. Como é um projeto simples vou deixar do jeito que está.
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/f1701071-639f-40ea-9227-ad907b9531c4"></p>
+<p align="center">imagem 11 - Criando cluster</p>
 
 ## Gratuidade
 
