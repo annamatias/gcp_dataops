@@ -90,7 +90,6 @@ Depois que chegar o e-mail, volte novamente na console do GCP na aba do Databric
 
 Feito os passos acima, ele vai abrir o workspace, conforme dissemos anteriormente, iremos criar o nosso "Criar Workspace".
 
-
 Aqui nesse passo é bem simples. Basta colocar o nome do workspace que deseja, você vai copiar do GCP o ID do projeto e colar lá, e na região SEMPRE busque utilizar `us-central1` porque esse é uma das regiões gratuitas.
 
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/41cb92e9-ce89-4dcb-9d5f-ee9787e68cc4"></p>
@@ -115,7 +114,6 @@ Fique sempre atento a esse prazo, para que não tenha eventuais cobranças futur
 
 O próprio google alega que depois de 90 dias caso não tenha o upgrade, ele exclui todos os seus projetos, mas faça isso antes..."O seguro morreu de velho" - Como diz meus pais.
 
-
 # CI/CD GitHub e Databricks
 
 Neste projeto iremos realizar a conexão entre Github e Databricks, para CI/CD. Primeiro vamos conectar o nosso repositório.
@@ -131,6 +129,53 @@ Concluindo o passo acima, já é possível visualizar o nosso repositório e as 
 
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/f03b0445-98b0-4be1-9c97-a309fcb2c593"></p>
 
+## Github Actions
+
+Para termos nossa esteira de integração e entrega continua, vamos utilizar os workflows do github. Ele vai servir para manter a acuracia do código, para não haver futuros erros e depuração de código demorada para cada usuário que esteja utilizando do repositório.
+
+Estou seguindo essa [documentação do github](https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-python) para implementarmos workflows no python.
+
+### PyLint
+
+Primeiro de todos os workflows, baseado em DataOps, iremos implementar o Lint, ele serve para verificar se a escrita do nosso código está correta, evitando erros futuros, antes mesmo de o código estar em vigor executando.
+
+- [Documentação Lint](https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-python#using-ruff-to-lint-code)
+
+O exemplo a seguir instala ou atualiza o ruff e o usa para fazer lint de todos os arquivos. Para obter mais informações, confira [Ruff](https://beta.ruff.rs/docs/). Dei uma adaptada baseado na doc do github actions, acrescentei o nome, onde ele vai executar e o jobs build.
+
+> Para aplicar, você tem que criar uma nova pasta oculta `.github/workflows` e um arquivo yml, com o conteúdo abaixo.
+
+YAML
+
+```
+name: Pylint
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Lint with Ruff
+      run: |
+        pip install ruff
+        ruff --format=github --target-version=py37 .
+      continue-on-error: true
+
+````
+
+A etapa de lint tem continue-on-error: true definido. Isto impedirá que o fluxo de trabalho falhe se a etapa de limpeza de código não for bem-sucedida. Após corrigir todos os erros de limpeza de código, você poderá remover essa opção para que o fluxo de trabalho capture novos problemas.
+
+# ETL
 
 ## Criando um notebook
 
@@ -159,6 +204,7 @@ Em andamento.
 - Github
   - <https://docs.github.com/pt/actions/learn-github-actions/understanding-github-actions>
   - <https://docs.github.com/pt/actions/automating-builds-and-tests/about-continuous-integration>
+  - <https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-python>
   - <https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-python>
 - Data Quality
   - <https://www.heavy.ai/technical-glossary/data-quality>
