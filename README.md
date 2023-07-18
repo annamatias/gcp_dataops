@@ -78,8 +78,6 @@ Feito isso, você vai finalizar e vai receber um **email**, lá vai ter o link q
 
 Acessando o link, vamos criar um cluster, ele já aparece logo no inicio bem grande.
 
---
-
 ## Gratuidade
 
 > Reforçando recado IMPORTANTE!
@@ -88,8 +86,6 @@ O GCP é gratuito por 90 dias para novos usuários e o Databricks por 14 dias (L
 Fique sempre atento a esse prazo, para que não tenha eventuais cobranças futuramente.
 
 O próprio google alega que depois de 90 dias caso não tenha o upgrade, ele exclui todos os seus projetos, mas faça isso antes..."O seguro morreu de velho" - Como diz meus pais.
-
---
 
 ## Informações recomendas para aplicar na criação do cluster
 
@@ -110,13 +106,9 @@ No canto superior esquerdo vamos em **Data science e engineering**, clique no `+
 
 No canto superior esquerdo vamos em **Data science e engineering**, clique em `Workspace` para ver todos os notebooks, pastas criadas dentro do databricks.
 
---
-
 ## Como criar um Job com Schedule?
 
 No canto superior esquerdo vamos em **Data science e engineering**, clique em `Workflows` para ver todos os jobs criados, e para criar um novo, você vai no canto superior direito em `Create Job`.
-
---
 
 # Integração GitHub e Databricks
 
