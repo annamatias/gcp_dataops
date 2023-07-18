@@ -217,6 +217,7 @@ A nossa primeira vez, ela vai estar desconfigurada e vai solicitar que realizemo
 Documentações de apoio:
 - [Adicionar uma nova chave SSH à sua conta do GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 - [Verificando as chaves SSH existentes](https://docs.github.com/en/enterprise-cloud@latest/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
+- [Gerenciar seus tokens de acesso pessoal](https://docs.github.com/pt/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
 
 > Os passos acimas é necessário que você tenha feito o git clone do seu repositório, na sua máquina, abra o terminal de preferência e execute os comandos. Vou deixar abaixo um guia via terminal de como eu fiz e depois via interface onde eu adicionei, mas recomendo que você mesmo faça a leitura.
 > > A geração de SSH para escritura no repositório com o seu e-mail, ela é feita em muitos lugares. Então esse conhecimento vai ser útil em experiências profissionais. Pode ocorrer num Azure DevOps, Amazon, GCP with Databricks e muitos outros.
@@ -272,10 +273,25 @@ Exemplo após adicionar a key ao Github via interface
 
 <p align="center"><img width="1143" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/bb3b9f56-5e36-4e45-8a7f-a79c763c93a3"></p>
 
-Essa mesma chave você vai adicionar ao Databricks, após colocar o e-mail.
+Feito isso, temos que gerar um token de acesso pessoal para colocar no databricks. Para isso iremos em configurações e depois configurações do desenvolvedor. Gerar um token pessoal e selecionar as permissões desejadas para esse token de acesso.
+
+<img width="1259" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/509c46a4-8173-471b-aeaa-dbbee163bc46">
+
+Após gerar esse token, acrescentamos ele dentro do nosso databricks, para que seja possível criar branchs e realizar outras operações de leitura e escrita, passando por nossa esteira de integração e entrega continua. Sendo possivel visualizar depois de cama push o nosso build em git actions.
 
 <p align="center"><img width="1291" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/37164ad6-1971-43ef-89a8-43512b92d843"></p>
 
+## Abrindo pull request
+
+Após criarmos uma branch, adicionamos a mensagem da alteração e adicionamos, feito vai surgir um link de acesso a nossa PR (pull request), iremos acessar e finalizar o processo, conforme abaixo.
+
+<p align="center"><img width="1322" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/fc5f0f0d-03c8-46a4-a101-70bb7d090064"></p>
+
+<p align="center"><img width="926" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/895551a9-c1ff-489b-b4ca-b449b77984ad"></p>
+
+<p align="center"><img width="930" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/2937f6f8-0601-499a-84a8-4317dcb98ee4"></p>
+
+<p align="center"><img width="1336" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/7dd966ac-0f66-44fc-b6d4-2eee50999213"></p>
 
 ## Como criar um Job com Schedule?
 
