@@ -210,6 +210,11 @@ Iremos acessar via console o storage cloud, depois disso é somente adicionar um
 
 Para isso recomendo olhar o código adicionado na estrutura.
 
+Mas deixo aqui uma breve visualização de como é o comportamento após armazenar os dados particionado por uma coluna e no formato Delta via GCP.
+
+<p align="center"><img width="1364" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/694514c6-d90b-42a9-b816-06ec290ef7f3"></p>
+
+
 ## Criar uma branch e criar pull request para main via Databricks
 
 A nossa primeira vez, ela vai estar desconfigurada e vai solicitar que realizemos as devidas configurações. Para isso, no seu email utilizado para realizar os commits dentro do seu repositório, exclusivamente para ele teremos que criar um SSH com permissões para o Databricks ler e gravar os dados.
