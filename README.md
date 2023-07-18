@@ -70,7 +70,26 @@ Antes do botão acessar, irá mostrar o resumo do pedido e quantidade de dias qu
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/e804f57d-604e-4985-8382-9695a637828d"></p>
 <p align="center">imagem 3 - Resumo do pedido, ao assinar o Databricks</p>
 
-Faça login sempre com a conta que utiliza o GCP, depois que selecionar o plano que eles indicam pra você, volte novamente na interface do GCP do Databricks e clique nele, ele vai te redirecionar para um link para você criar o seu **workspace**.
+Faça login sempre com a conta que utiliza o GCP, depois que selecionar o plano que eles indicam para você criar a conta no Databricks, e vai aparecer uma tela conferme a próxima imagem. Observe que eles pedem o nome de uma organização, você escreve o nome que achar melhor.
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/f4bcde57-7ae7-45eb-a977-5bf0fe14b31a"></p>
+<p align="center">imagem 5 - Criando conta</p>
+
+Feito o processo acima, importante citar que vai ser enviado um e-mail com a confirmação da criação da conta, parecido com o e-mail abaixo.
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/a92090c3-25d2-4706-b476-61f362ef03c5"></p>
+<p align="center">imagem 6 - Exemplo e-mail</p>
+
+Depois que chegar o e-mail, volte novamente na console do GCP na aba do Databricks. Iremos clicar em "Gerenciar no fornecedor" nele, ele vai te redirecionar para um link para você fazer login e criar o seu **workspace**. Antes disso, iremos realizar login novamente e selecionar o plano de assinatura, é só confirmar.
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/ae8a9d96-27ef-4255-be81-17112db2fe7d"></p>
+<p align="center">imagem 7 - Gerenciar no fornecedor</p>
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/33690575-f774-472e-a6a6-81b10f94c836"></p>
+<p align="center">imagem 8 - Plano de assinatura</p>
+
+Feito os passos acima, ele vai abrir o workspace, conforme dissemos anteriormente, iremos criar o nosso "Criar Workspace".
+
 
 Aqui nesse passo é bem simples. Basta colocar o nome do workspace que deseja, você vai copiar do GCP o ID do projeto e colar lá, e na região SEMPRE busque utilizar `us-central1` porque esse é uma das regiões gratuitas.
 
