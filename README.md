@@ -206,6 +206,76 @@ Iremos acessar via console o storage cloud, depois disso é somente adicionar um
 
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/4f23a6df-13eb-401d-874e-43adc44e34ea"></p>
 
+## Realizar leitura e armazenamento de dados
+
+Para isso recomendo olhar o código adicionado na estrutura.
+
+## Criar uma branch e criar pull request para main via Databricks
+
+A nossa primeira vez, ela vai estar desconfigurada e vai solicitar que realizemos as devidas configurações. Para isso, no seu email utilizado para realizar os commits dentro do seu repositório, exclusivamente para ele teremos que criar um SSH com permissões para o Databricks ler e gravar os dados.
+
+Documentações de apoio:
+- [Adicionar uma nova chave SSH à sua conta do GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+- [Verificando as chaves SSH existentes](https://docs.github.com/en/enterprise-cloud@latest/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
+
+> Os passos acimas é necessário que você tenha feito o git clone do seu repositório, na sua máquina, abra o terminal de preferência e execute os comandos. Vou deixar abaixo um guia via terminal de como eu fiz e depois via interface onde eu adicionei, mas recomendo que você mesmo faça a leitura.
+> > A geração de SSH para escritura no repositório com o seu e-mail, ela é feita em muitos lugares. Então esse conhecimento vai ser útil em experiências profissionais. Pode ocorrer num Azure DevOps, Amazon, GCP with Databricks e muitos outros.
+
+```
+# Para verificar se existe chave:
+>  ls -al ~/.ssh
+
+# Para gerar uma nova SSH para o meu e-mail
+> ssh-keygen -t ed25519 -C "your-email" 
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/annakarolinymatias/.ssh/id_ed2558689): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/annakarolinymatias/.ssh/id_ed2558689
+Your public key has been saved in /Users/annakarolinymatias/.ssh/id_ed2558689.pub
+The key fingerprint is:
+SHA256:yFQvIYLIoBlzIlPEBU1lRgEo+UxiViitQ8DgKy/V5tA annamatiask@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|/BBO=+B.o        |
+|X#* .+ o o       |
+|BO    . . .      |
+| .               |
+|                 |
++----[SHA256]-----+
+
+# Para verificar se foi feito com sucesso
+> eval "$(ssh-agent -s)"
+Agent pid 59115
+
+# Adicionando a chave
+> ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+Enter passphrase for /Users/annakarolinymatias/.ssh/id_ed2558689: 
+Identity added: /Users/annakarolinymatias/.ssh/id_ed2558689 (your-email)
+
+# Lendo a secret SSH
+> cat /Users/annakarolinymatias/.ssh/id_ed2558689
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABCA/+4YHq
+u0OTPnPot4zLV1aCbtII7OHOZpA4pIvmCTwEzbzGUNJk4MvXhYnBuF2H4zMNq90XXaFzG3
+61UjY3Tdi5Nbxr5ocTCxhfZbTUvOjdR+SxYUM=
+-----END OPENSSH PRIVATE KEY-----
+
+# Para copiar a secret SSH
+> pbcopy < ~/.ssh/id_ed25519    
+                             
+# Para visualizar a key para adicionar no Github SSH
+> cat ~/.ssh/id_ed25519.pub 
+ssh-ed2558689 AAAAC3NzLEJ2/zunnWAEXwg8c5m your-email
+```
+Exemplo após adicionar a key ao Github via interface
+
+<p align="center"><img width="1143" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/bb3b9f56-5e36-4e45-8a7f-a79c763c93a3"></p>
+
+Essa mesma chave você vai adicionar ao Databricks, após colocar o e-mail.
+
+<p align="center"><img width="1291" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/37164ad6-1971-43ef-89a8-43512b92d843"></p>
+
 
 ## Como criar um Job com Schedule?
 
