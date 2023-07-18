@@ -48,6 +48,10 @@ No canto superior esquerdo, temos um menu bar, acessando ele, vamos atrás do **
 <p align="center">imagem 3 - Databricks fixado</p>
 
 Depois que acessar o databricks, clique em Assinar e concorde com os termos e condições.
+Antes do botão acessar, irá mostrar o resumo do pedido e quantidade de dias que estará gratuito, outro ponto importante você tem que ter um cartão para faturamento, mas fica calmo que a Google não vai sair cobrando nada de você. Muito pelo contrario e é uma experiencia muito boa que eu obtive, quando passa o prazo de gratuidade e você não assina o pacote completo, ele automaticamente apaga e corta os recursos utilizados para não gerar nada, e você não será cobrado.
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/e804f57d-604e-4985-8382-9695a637828d"></p>
+<p align="center">imagem 3 - Resumo do pedido, ao assinar o Databricks</p>
 
 Faça login sempre com a conta que utiliza o GCP, depois que selecionar o plano que eles indicam pra você, volte novamente na interface do GCP do Databricks e clique nele, ele vai te redirecionar para um link para você criar o seu **workspace**.
 
@@ -82,7 +86,7 @@ No canto superior esquerdo vamos em **Data science e engineering**, clique em `W
 
 ## Gratuidade
 
-Informação bem importante, o GCP é gratuito por 90 dias para novos usuários e o Databricks por 14 dias
+Informação bem importante, o GCP é gratuito por 90 dias para novos usuários e o Databricks por 14 dias (Lembrando que os prazos sempre estão sujeito a alterações).
 Fique sempre atento a esse prazo, para que não tenha eventuais cobranças futuramente.
 
 O próprio google alega que depois de 90 dias caso não tenha o upgrade, ele exclui todos os seus projetos, mas faça isso antes..."O seguro morreu de velho" - Como diz meus pais.
