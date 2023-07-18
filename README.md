@@ -1,9 +1,7 @@
 <h1 align="center">GCP DataOps</h1>
 
-<p align="center">Projeto guiado inteiramente em todos os processos de DataOps</p>
-
-<p align="center"><img width="1126" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/4fe5a655-a3f9-484e-ad50-bb1cd30e12ec">
-</p>
+<p align="center">Projeto com todos os processos de DataOps</p>
+[![Pylint](https://github.com/annamatias/gcp_dataops/actions/workflows/pylint.yml/badge.svg)](https://github.com/annamatias/gcp_dataops/actions/workflows/pylint.yml)
 
 # Sobre
 
@@ -145,9 +143,7 @@ O exemplo a seguir instala ou atualiza o ruff e o usa para fazer lint de todos o
 
 > Para aplicar, você tem que criar uma nova pasta oculta `.github/workflows` e um arquivo yml, com o conteúdo abaixo.
 
-YAML
-
-```
+```yaml
 name: Pylint
 
 on: [push]
@@ -208,6 +204,11 @@ No canto superior esquerdo vamos em **Data science e engineering**, clique em `W
 
 Em andamento.
 
+# Arquitetura Base
+
+<p align="center"><img width="1126" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/4fe5a655-a3f9-484e-ad50-bb1cd30e12ec">
+</p>
+
 ---
 
 # Referências
@@ -227,6 +228,6 @@ Em andamento.
 **Anna Karoliny** - *Mentora, Professora, Desenvolvedora e Engenheira de Dados*
 <div>
 <a href="https://www.instagram.com/annaskaroliny/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
-<a href="https://www.linkedin.com/in/anna-karoliny-matias-dos-santos" 
-target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>   
+<a href="https://www.linkedin.com/in/anna-karoliny-matias-dos-santos"
+target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 </div>
