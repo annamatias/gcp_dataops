@@ -15,9 +15,19 @@
 
 ---
 
-## Pré-requisitos
+## Tecnologias
 
-Saber sobre a linguagem Python, conhecimentos em Apache Spark/Pyspark, SQL, Databricks e GCP.
+| Descrição | Ferramenta |
+|-----------| -----------|
+| Apache Spark | ![Apache Spark](https://img.shields.io/badge/Apache_Spark-FFFFFF?style=for-the-badge&logo=apachespark&logoColor=#E35A16) |
+| Google Cloud | ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white) |
+| Python | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) |
+| Jupyter Notebook | ![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white) |
+| Prometheus | ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white) |
+| Git | ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) |
+| GitHub Actions | ![GitHub Actions](https://img.shields.io/badge/Github%20Actions-282a2e?style=for-the-badge&logo=githubactions&logoColor=367cfe) |
+| Databricks | ![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=Databricks&logoColor=white)
+| Delta Table | ![Delta Table](https://camo.githubusercontent.com/8dc907a1f537c017900e758ac8eb0b595090567c431a5e9fc993ae1cbf8379e4/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d44656c746126636f6c6f723d303033333636266c6f676f3d44656c7461266c6f676f436f6c6f723d464646464646266c6162656c3d)
 
 ---
 
@@ -25,9 +35,14 @@ Saber sobre a linguagem Python, conhecimentos em Apache Spark/Pyspark, SQL, Data
 
 Você pode realizar o clone, e executar o jupyter notebook, mas não vai funcionar como é o verdadeiro objetivo (Utilizar o GCP para execução juntamente com o Databricks).
 
-Para executar o meu projeto, recomendo criar uma conta no google cloud platform, caso não tenha.
+Para executar o meu projeto, recomendo criar uma conta no google cloud platform, caso não tenha e realizar os passos abaixo de configuração e execução. Nessa doc do projeto tem todos os passos para reproduzir um equivalente ao meu, mas é necessário apenas configurar a conta e importar o arquivo e executar no ambiente configurado.
+
+### Clonagem
+
+`> git clone https://github.com/annamatias/gcp_dataops.git`
 
 ---
+
 # Configurando GCP (Google Cloud Platform)
 
 Depois que criamos nossa conta, ele já cria um projeto automaticamente, para termos controle de qual projeto estamos mexendo, vamos renomear.
@@ -48,7 +63,7 @@ No canto superior esquerdo, temos um menu bar, acessando ele, vamos atrás do **
 <p align="center">imagem 4 - Databricks fixado</p>
 
 Depois que acessar o databricks, clique em Assinar e concorde com os termos e condições.
-Antes do botão acessar, irá mostrar o resumo do pedido e quantidade de dias que estará gratuito. 
+Antes do botão acessar, irá mostrar o resumo do pedido e quantidade de dias que estará gratuito.
 
 > Outro ponto importante você tem que ter um cartão para faturamento, mas fica calmo que a Google não vai sair cobrando nada de você. Muito pelo contrario e é uma experiencia muito boa que eu obtive, quando passa o prazo de gratuidade e você não assina o pacote completo, ele automaticamente apaga e corta os recursos utilizados para não gerar nada, e você não será cobrado.
 
@@ -106,14 +121,23 @@ Depois iremos adicionar as informações do repositório, e criar um nono reposi
 
 ---
 
+### Status do Projeto
+
+Em andamento.
+
+---
+
 ### Referências
 
-- https://docs.github.com/pt/actions/learn-github-actions/understanding-github-actions
-- https://docs.github.com/pt/actions/automating-builds-and-tests/about-continuous-integration
-- https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-python
+- Github
+  - <https://docs.github.com/pt/actions/learn-github-actions/understanding-github-actions>
+  - <https://docs.github.com/pt/actions/automating-builds-and-tests/about-continuous-integration>
+  - <https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-python>
+- Data Quality
+  - <https://www.heavy.ai/technical-glossary/data-quality>
 
 ---
 
 ## Autor
 
-- **Anna Karoliny** - _Mentora, Professora, Desenvolvedora e Engenheira de Dados_
+- **Anna Karoliny** - *Mentora, Professora, Desenvolvedora e Engenheira de Dados*
