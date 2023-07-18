@@ -231,6 +231,11 @@ Em andamento.
   - <https://docs.github.com/pt/actions/automating-builds-and-tests/about-continuous-integration>
   - <https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-python>
   - <https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-python>
+- GCP
+  - <https://cloud.google.com/storage/docs/uploading-objects?hl=pt-BR>
+- Databricks
+  - <https://docs.gcp.databricks.com/files/unzip-files.html#how-to-unzip-data>
+  - <https://docs.gcp.databricks.com/external-data/csv.html>
 - Data Quality
   - <https://www.heavy.ai/technical-glossary/data-quality>
 
