@@ -175,6 +175,17 @@ jobs:
 
 A etapa de lint tem continue-on-error: true definido. Isto impedirá que o fluxo de trabalho falhe se a etapa de limpeza de código não for bem-sucedida. Após corrigir todos os erros de limpeza de código, você poderá remover essa opção para que o fluxo de trabalho capture novos problemas.
 
+### Verificando Build Pylint
+
+O nosso primeiro build, a ideia é que falhe mesmo, porque estamos configurando ele. Como estamos realizando a instalação do requeriments no nosso bash, mas ele não existe ainda. Segue um mini gif, ensinando como verificar o seu build aqui no github.
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/e7fb415a-c45c-451c-a67f-89c6bd170d4a"></p>
+
+Mas ele está pronto o nosso build, agora com a implementação do código e executando na máquina local, você consegue realizar testar tudo o que foi instalado no ambiente virtual. Eu comentei esse trecho de dependencias por enquanto para visualizar a funcionalidade e ele funciona lindamente.
+
+<p align="center"><img width="1347" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/d9d2da6f-8851-48b1-8f85-a403426a6794"></p>
+<p align="center">imagem 13 - Execução build pylint</p>
+
 # ETL
 
 ## Criando um notebook
