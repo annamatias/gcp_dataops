@@ -114,6 +114,12 @@ Concluindo o passo acima, já é possível visualizar o nosso repositório e as 
 
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/f03b0445-98b0-4be1-9c97-a309fcb2c593"></p>
 
+### Realizando Pull
+
+Somente seguir o gif abaixo, para realizar o pull após alterações.
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/c64bd1f3-80c2-49f2-b03d-12a76bffc054"></p>
+
 ## Github Actions
 
 Para termos nossa esteira de integração e entrega continua, vamos utilizar os workflows do github. Ele vai servir para manter a acuracia do código, para não haver futuros erros e depuração de código demorada para cada usuário que esteja utilizando do repositório.
