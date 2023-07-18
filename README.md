@@ -15,7 +15,7 @@
 
 ---
 
-## Tecnologias
+# Tecnologias
 
 | Descrição | Ferramenta |
 |-----------| -----------|
@@ -31,13 +31,13 @@
 
 ---
 
-## Executar Projeto
+# Executar Projeto
 
 Você pode realizar o clone, e executar o jupyter notebook, mas não vai funcionar como é o verdadeiro objetivo (Utilizar o GCP para execução juntamente com o Databricks).
 
 Para executar o meu projeto, recomendo criar uma conta no google cloud platform, caso não tenha e realizar os passos abaixo de configuração e execução. Nessa doc do projeto tem todos os passos para reproduzir um equivalente ao meu, mas é necessário apenas configurar a conta e importar o arquivo e executar no ambiente configurado.
 
-### Clonagem
+## Clonagem
 
 `> git clone https://github.com/annamatias/gcp_dataops.git`
 
@@ -78,6 +78,19 @@ Feito isso, você vai finalizar e vai receber um **email**, lá vai ter o link q
 
 Acessando o link, vamos criar um cluster, ele já aparece logo no inicio bem grande.
 
+--
+
+## Gratuidade
+
+> Reforçando recado IMPORTANTE!
+
+O GCP é gratuito por 90 dias para novos usuários e o Databricks por 14 dias (Lembrando que os prazos sempre estão sujeito a alterações).
+Fique sempre atento a esse prazo, para que não tenha eventuais cobranças futuramente.
+
+O próprio google alega que depois de 90 dias caso não tenha o upgrade, ele exclui todos os seus projetos, mas faça isso antes..."O seguro morreu de velho" - Como diz meus pais.
+
+--
+
 ## Informações recomendas para aplicar na criação do cluster
 
 - Sempre utilize a versão estavel recomendada pelo databricks.
@@ -93,22 +106,19 @@ Feito tudo acima, agora conseguimos utilizar do nosso cluster.
 
 No canto superior esquerdo vamos em **Data science e engineering**, clique no `+` para criar um notebook.
 
-## Onde está meus notebooks?
+## Onde está os meus notebooks?
 
 No canto superior esquerdo vamos em **Data science e engineering**, clique em `Workspace` para ver todos os notebooks, pastas criadas dentro do databricks.
+
+--
 
 ## Como criar um Job com Schedule?
 
 No canto superior esquerdo vamos em **Data science e engineering**, clique em `Workflows` para ver todos os jobs criados, e para criar um novo, você vai no canto superior direito em `Create Job`.
 
-## Gratuidade
+--
 
-Informação bem importante, o GCP é gratuito por 90 dias para novos usuários e o Databricks por 14 dias (Lembrando que os prazos sempre estão sujeito a alterações).
-Fique sempre atento a esse prazo, para que não tenha eventuais cobranças futuramente.
-
-O próprio google alega que depois de 90 dias caso não tenha o upgrade, ele exclui todos os seus projetos, mas faça isso antes..."O seguro morreu de velho" - Como diz meus pais.
-
-## Integração GitHub e Databricks
+# Integração GitHub e Databricks
 
 É possível realizar a conexão entre o repositório do Github dentro do databricks, mas se você estive utilizando a versão gratuita talvez tenha limitações para conseguir realizar a integração.
 
@@ -121,13 +131,13 @@ Depois iremos adicionar as informações do repositório, e criar um nono reposi
 
 ---
 
-### Status do Projeto
+# Status do Projeto
 
 Em andamento.
 
 ---
 
-### Referências
+# Referências
 
 - Github
   - <https://docs.github.com/pt/actions/learn-github-actions/understanding-github-actions>
@@ -138,6 +148,6 @@ Em andamento.
 
 ---
 
-## Autor
+# Autor
 
 - **Anna Karoliny** - *Mentora, Professora, Desenvolvedora e Engenheira de Dados*
