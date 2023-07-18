@@ -124,6 +124,16 @@ O próprio google alega que depois de 90 dias caso não tenha o upgrade, ele exc
 
 Depois disso é só sucesso. Eu escolho esse n1 standart porque ele abrange tanto memoria otimizada quanto computação otimizada. Mas dependendo do projeto na vida real, é legal entender a quantidade de dados que o cluster vai tratar, para escolher um meio termo ou configuração mais especifica.
 
+# CI/CD GitHub e Databricks
+
+Neste projeto iremos realizar a conexão entre Github e Databricks, para CI/CD. Primeiro vamos conectar o nosso repositório.
+> Se você estive utilizando a versão gratuita talvez tenha limitações para conseguir realizar a integração, caso já tenha muitas coisas dentro do repositório.
+
+Para adicionar, devemos ir na sessão de **repositórios**, como a imagem abaixo, adicionar as informações que solicitam, basicamente o link do clone do repo. Feito isso é só criar um repositório.
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/df46d52f-1248-40af-ac2c-deed8ae077b8"></p>
+<p align="center">imagem 12 - Criando repositório</p>
+
 ## Criando um notebook
 
 Feito tudo acima, agora conseguimos utilizar do nosso cluster.
@@ -137,17 +147,6 @@ No canto superior esquerdo vamos em **Data science e engineering**, clique em `W
 ## Como criar um Job com Schedule?
 
 No canto superior esquerdo vamos em **Data science e engineering**, clique em `Workflows` para ver todos os jobs criados, e para criar um novo, você vai no canto superior direito em `Create Job`.
-
-# Integração GitHub e Databricks
-
-É possível realizar a conexão entre o repositório do Github dentro do databricks, mas se você estive utilizando a versão gratuita talvez tenha limitações para conseguir realizar a integração.
-
-Para adicionar, devemos ir no *Espaço de trabalho* e ir na sessão de repositórios, como a imagem abaixo.
-![image](https://github.com/annamatias/dataengineer-google-cloud/assets/53863170/fe5c7492-45f6-4ba3-852b-52d1171b5ca4)
-
-Depois iremos adicionar as informações do repositório, e criar um nono repositório.
-
-<img width="894" alt="image" src="https://github.com/annamatias/dataengineer-google-cloud/assets/53863170/7f775696-4a74-4f59-826c-721b6b0419f8">
 
 ---
 
