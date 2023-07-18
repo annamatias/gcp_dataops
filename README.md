@@ -200,6 +200,12 @@ Você pode simplesmente baixar e depois arrastas ou procurar via desktop o seu a
 
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/f4231d23-8012-4862-aad3-5fd6098f0f2d"></p>
 
+## Realizando upload de arquivo no Storage Cloud
+
+Iremos acessar via console o storage cloud, depois disso é somente adicionar um novo arquivo no caminho desejado. Como vou utilizar o arquivo no databricks, eu adicionei dentro de uma pasta `/tmp`
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/4f23a6df-13eb-401d-874e-43adc44e34ea"></p>
+
 
 ## Como criar um Job com Schedule?
 
