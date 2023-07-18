@@ -115,14 +115,6 @@ Fique sempre atento a esse prazo, para que não tenha eventuais cobranças futur
 
 O próprio google alega que depois de 90 dias caso não tenha o upgrade, ele exclui todos os seus projetos, mas faça isso antes..."O seguro morreu de velho" - Como diz meus pais.
 
-## Informações recomendas para aplicar na criação do cluster
-
-- Sempre utilize a versão estavel recomendada pelo databricks.
-- **Worker type**, costumo colocar `n1-standard-4` sendo `15GB Memoria e 4 Cores`
-- **Min workers** eu deixo: `1`
-- **Max workers** eu deixo: `8`
-
-Depois disso é só sucesso. Eu escolho esse n1 standart porque ele abrange tanto memoria otimizada quanto computação otimizada. Mas dependendo do projeto na vida real, é legal entender a quantidade de dados que o cluster vai tratar, para escolher um meio termo ou configuração mais especifica.
 
 # CI/CD GitHub e Databricks
 
