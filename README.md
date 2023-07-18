@@ -194,6 +194,13 @@ No canto superior esquerdo vamos em **Data science e engineering**, clique no `+
 
 No canto superior esquerdo vamos em **Data science e engineering**, clique em `Workspace` para ver todos os notebooks, pastas criadas dentro do databricks.
 
+## Realizando a importação de um arquivo
+
+Você pode simplesmente baixar e depois arrastas ou procurar via desktop o seu arquivo, e realizar o deploy.
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/f4231d23-8012-4862-aad3-5fd6098f0f2d"></p>
+
+
 ## Como criar um Job com Schedule?
 
 No canto superior esquerdo vamos em **Data science e engineering**, clique em `Workflows` para ver todos os jobs criados, e para criar um novo, você vai no canto superior direito em `Create Job`.
