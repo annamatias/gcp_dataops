@@ -126,6 +126,12 @@ Para adicionar, devemos ir na sessão de **repositórios**, como a imagem abaixo
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/df46d52f-1248-40af-ac2c-deed8ae077b8"></p>
 <p align="center">imagem 12 - Criando repositório</p>
 
+Concluindo o passo acima, já é possível visualizar o nosso repositório e as pastas.
+> O Databricks ele é bem completo, principalmente a sua documentação, onde pela própria interface conseguimos criar uma nova branch, realizar commits, push, pull, merge pela mesma interface.
+
+<p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/f03b0445-98b0-4be1-9c97-a309fcb2c593"></p>
+
+
 ## Criando um notebook
 
 Feito tudo acima, agora conseguimos utilizar do nosso cluster.
