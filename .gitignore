@@ -163,5 +163,5 @@ cython_debug/
 flake8 --ignore=E501
 
 # ignorando pastas
-./src/
-./tests/
+./src/notebooks/
+/src/notebooks/
