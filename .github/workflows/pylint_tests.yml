@@ -24,5 +24,3 @@ jobs:
           coverage run -m unittest -v
           coverage report
           coverage html
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
