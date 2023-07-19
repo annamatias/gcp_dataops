@@ -23,7 +23,8 @@ def rename_columns(df):
 
 def save_delta(df):
     logging.info("Armazenando dados de forma particionada no storage cloud")
-    df.write.format("delta").mode("overwrite").option("mergeSchema", "true").partitionBy("General_Health").save("/hospital/rw/cardiovascular_diseases/")
+    df.write.format("delta").mode("overwrite").option("mergeSchema", "true").partitionBy(
+        "General_Health").save("/hospital/rw/cardiovascular_diseases/")
 
 
 def main():
@@ -31,3 +32,8 @@ def main():
     df = read_csv(spark)
     df = rename_columns(df)
     save_delta(df)
+    spark.stop()
+
+
+if __name__ == '__main__':
+    main()
