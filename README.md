@@ -13,7 +13,6 @@
 
 > *Até então, não é ideal utilizar spark para a pequena quantidade de dados, o ideal é acima de GB (Giga Bytes), mas é um projeto, visa trazer aprendizados da vida real, com conteúdo técnico.*
 
-
 ---
 
 # Executar Projeto
@@ -114,7 +113,6 @@ Concluindo o passo acima, já é possível visualizar o nosso repositório e as 
 
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/f03b0445-98b0-4be1-9c97-a309fcb2c593"></p>
 
-
 ## Github Actions
 
 Para termos nossa esteira de integração e entrega continua, vamos utilizar os workflows do github. Ele vai servir para manter a acuracia do código, para não haver futuros erros e depuração de código demorada para cada usuário que esteja utilizando do repositório.
@@ -214,12 +212,12 @@ Mas deixo aqui uma breve visualização de como é o comportamento após armazen
 
 <p align="center"><img width="1364" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/694514c6-d90b-42a9-b816-06ec290ef7f3"></p>
 
-
 ## Criar uma branch e criar pull request para main via Databricks
 
 A nossa primeira vez, ela vai estar desconfigurada e vai solicitar que realizemos as devidas configurações. Para isso, no seu email utilizado para realizar os commits dentro do seu repositório, exclusivamente para ele teremos que criar um SSH com permissões para o Databricks ler e gravar os dados.
 
 Documentações de apoio:
+
 - [Adicionar uma nova chave SSH à sua conta do GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 - [Verificando as chaves SSH existentes](https://docs.github.com/en/enterprise-cloud@latest/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
 - [Gerenciar seus tokens de acesso pessoal](https://docs.github.com/pt/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
@@ -260,6 +258,7 @@ Identity added: /Users/annakarolinymatias/.ssh/id_ed2558689 (your-email)
 > cat ~/.ssh/id_ed25519.pub 
 ssh-ed2558689 AAAAC3NzLEJ2/zunnWAEXwg8c5m your-email
 ```
+
 Exemplo após adicionar a key ao Github via interface
 
 <p align="center"><img width="1143" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/bb3b9f56-5e36-4e45-8a7f-a79c763c93a3"></p>
@@ -315,6 +314,9 @@ Em andamento.
   - <https://docs.gcp.databricks.com/external-data/csv.html>
 - Data Quality
   - <https://www.heavy.ai/technical-glossary/data-quality>
+- Testes
+  - <https://blog.devgenius.io/covering-unit-tests-running-in-sub-processes-threads-on-github-actions-using-coverage-py-825c3c4e08c1>
+  - <https://blog.cambridgespark.com/unit-testing-with-pyspark-fb31671b1ad8>
 
 ---
 
