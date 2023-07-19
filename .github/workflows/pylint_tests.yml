@@ -20,7 +20,8 @@ jobs:
           flake8 --ignore=E501 src/ tests/ --exclude=src/notebooks
       - name: Run unit tests and generate coverage report
         run: |
-          coverage run --concurrency=multiprocessing -m unittest -v
-          coverage combine
+          coverage run -m unittest -v
+          coverage report
+          coverage html
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
