@@ -12,7 +12,7 @@ class PySparkTest(unittest.TestCase):
 
     @classmethod
     def create_testing_pyspark_session(cls):
-        return (SparkSession.builder.master("local[2]").appName("my-local-testing-pyspark-context").enableHiveSupport().getOrCreate())
+        return (SparkSession.builder.master("local[2]").appName("local testes").enableHiveSupport().getOrCreate())
 
     @classmethod
     def setUpClass(cls):
