@@ -24,6 +24,9 @@ jobs:
     - name: Lint with flake8
       run: |
         flake8
+        flake8 --ignore=E501
+        ./src/notebooks/
+        /src/notebooks/
     - name: Run unit tests and generate coverage report
       run: |
         coverage run --concurrency=multiprocessing -m unittest -v
