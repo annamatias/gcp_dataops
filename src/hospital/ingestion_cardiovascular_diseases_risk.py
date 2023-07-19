@@ -1,6 +1,6 @@
-from databricks.connect import DatabricksSession
-import logging
 import pprint
+import logging
+from databricks.connect import DatabricksSession
 
 
 def setup_session():
