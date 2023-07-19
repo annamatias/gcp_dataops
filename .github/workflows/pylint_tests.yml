@@ -1,0 +1,32 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install flake8 coverage
+        pip install -r requirements.txt
+    # - name: Lint with Ruff
+    #   run: |
+    #     pip install ruff
+    #     ruff --format=github --target-version=py37 .
+      # continue-on-error: true
+    - name: Lint with flake8
+      run: |
+        flake8
+    - name: Run unit tests and generate coverage report
+      run: |
+        coverage run --concurrency=multiprocessing -m unittest -v
+        coverage combine
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1

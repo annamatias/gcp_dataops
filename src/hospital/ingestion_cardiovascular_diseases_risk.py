@@ -12,7 +12,7 @@ def read_csv(spark):
     logging.info("Realizando leitura arquivo csv")
     df = spark.read.format("csv").option("header", True).load(
         "/tmp/cardiovascular-diseases-risk.csv")
-    pprint(df.show(10, False))
+    pprint.pprint(df.show(10, False))
     return df
 
 
