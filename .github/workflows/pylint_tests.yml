@@ -16,15 +16,14 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install flake8 coverage
         pip install -r requirements.txt
-        flake8 --ignore=E501 src/ tests/
-    - name: Lint with flake8
-      run: |
-        flake8
     - name: Ignorar pastas
       run: ls -a
       env:
         IGNORED_FOLDERS: "src/notebooks"
       shell: bash
+    - name: Lint with flake8
+      run: |
+        flake8 --ignore=E501 src/ tests/
     - name: Run unit tests and generate coverage report
       run: |
         coverage run --concurrency=multiprocessing -m unittest -v
