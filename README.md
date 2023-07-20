@@ -3,7 +3,7 @@
 
 <p align="center">Projeto com todos os processos de DataOps</p>
 
-[![Pylint](https://github.com/annamatias/gcp_dataops/actions/workflows/pylint.yml/badge.svg)](https://github.com/annamatias/gcp_dataops/actions/workflows/pylint.yml)
+[![CI](https://github.com/annamatias/gcp_dataops/actions/workflows/pylint_tests.yml/badge.svg)](https://github.com/annamatias/gcp_dataops/actions/workflows/pylint_tests.yml)
 
 # Sobre
 
@@ -162,11 +162,12 @@ A etapa de lint tem continue-on-error: true definido. Isto impedirá que o fluxo
 O nosso primeiro build, a ideia é que falhe mesmo, porque estamos configurando ele. Como estamos realizando a instalação do requeriments no nosso bash, mas ele não existe ainda. Segue um mini gif, ensinando como verificar o seu build aqui no github.
 
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/e7fb415a-c45c-451c-a67f-89c6bd170d4a"></p>
+<p align="center">imagem 13 - Verificando build</p>
 
 Mas ele está pronto o nosso build, agora com a implementação do código e executando na máquina local, você consegue realizar testar tudo o que foi instalado no ambiente virtual. Eu comentei esse trecho de dependencias por enquanto para visualizar a funcionalidade e ele funciona lindamente.
 
 <p align="center"><img width="1347" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/d9d2da6f-8851-48b1-8f85-a403426a6794"></p>
-<p align="center">imagem 13 - Execução build pylint</p>
+<p align="center">imagem 14 - Execução build pylint</p>
 
 # ELT/ETL
 
@@ -175,12 +176,14 @@ Mas ele está pronto o nosso build, agora com a implementação do código e exe
 Somente seguir o gif abaixo, para realizar o pull após alterações.
 
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/c64bd1f3-80c2-49f2-b03d-12a76bffc054"></p>
+<p align="center">imagem 15 - Criação de pull request</p>
 
 ## Criando pastas e arquivos dentro do repositório
 
 Exemplo de criação de pastas e notebook dentro de um repositório no Databricks;
 
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/9154ed17-16a9-4968-bf36-3e1bf5a22041"></p>
+<p align="center">imagem 16 - Criação de pastas dentro de um repositório no Databricks</p>
 
 ## Criando um notebook
 
@@ -197,12 +200,14 @@ No canto superior esquerdo vamos em **Data science e engineering**, clique em `W
 Você pode simplesmente baixar e depois arrastas ou procurar via desktop o seu arquivo, e realizar o deploy.
 
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/f4231d23-8012-4862-aad3-5fd6098f0f2d"></p>
+<p align="center">imagem 17 - Deploy de um arquivo</p>
 
 ## Realizando upload de arquivo no Storage Cloud
 
 Iremos acessar via console o storage cloud, depois disso é somente adicionar um novo arquivo no caminho desejado. Como vou utilizar o arquivo no databricks, eu adicionei dentro de uma pasta `/tmp`
 
 <p align="center"><img alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/4f23a6df-13eb-401d-874e-43adc44e34ea"></p>
+<p align="center">imagem 18 - Deploy de um arquivo no storage</p>
 
 ## Realizar leitura e armazenamento de dados
 
@@ -211,6 +216,7 @@ Para isso recomendo olhar o código adicionado na estrutura.
 Mas deixo aqui uma breve visualização de como é o comportamento após armazenar os dados particionado por uma coluna e no formato Delta via GCP.
 
 <p align="center"><img width="1364" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/694514c6-d90b-42a9-b816-06ec290ef7f3"></p>
+<p align="center">imagem 18 - Console storage cloud no GCP após armanezamento</p>
 
 ## Criar uma branch e criar pull request para main via Databricks
 
@@ -262,33 +268,40 @@ ssh-ed2558689 AAAAC3NzLEJ2/zunnWAEXwg8c5m your-email
 Exemplo após adicionar a key ao Github via interface
 
 <p align="center"><img width="1143" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/bb3b9f56-5e36-4e45-8a7f-a79c763c93a3"></p>
+<p align="center">imagem 19 - Exemplo depois de adicionar a key</p>
 
 Feito isso, temos que gerar um token de acesso pessoal para colocar no databricks. Para isso iremos em configurações e depois configurações do desenvolvedor. Gerar um token pessoal e selecionar as permissões desejadas para esse token de acesso.
 
 <img width="1259" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/509c46a4-8173-471b-aeaa-dbbee163bc46">
+<p align="center">imagem 20 - Caminho feito para obter o token pessoal</p>
 
 Após gerar esse token, acrescentamos ele dentro do nosso databricks, para que seja possível criar branchs e realizar outras operações de leitura e escrita, passando por nossa esteira de integração e entrega continua. Sendo possivel visualizar depois de cama push o nosso build em git actions.
 
 <p align="center"><img width="1291" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/37164ad6-1971-43ef-89a8-43512b92d843"></p>
+<p align="center">imagem 21 - Exemplificação após acrescentar o token no databricks</p>
 
 ## Abrindo pull request
 
 Após criarmos uma branch, vamos colocar a mensagem da alteração e adicionamos, feito vai surgir um link de acesso a nossa PR (pull request), iremos acessar e finalizar o processo, conforme abaixo.
 
 <p align="center"><img width="1322" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/fc5f0f0d-03c8-46a4-a101-70bb7d090064"></p>
+<p align="center">imagem 22 - Exemplo via interface de criação de PR</p>
 
 Direcionando para o nosso Github, conseguimos visualizar o nosso pull request e em sequência vamos criar ele.
 
 <p align="center"><img width="926" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/895551a9-c1ff-489b-b4ca-b449b77984ad"></p>
+<p align="center">imagem 23 - Visualização da PR no github</p>
 
 Depois de feito a PR, vamos esperar finalizar o nosso build e em seguida iremos completar o merge na `main`.
 
 <p align="center"><img width="930" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/2937f6f8-0601-499a-84a8-4317dcb98ee4"></p>
+<p align="center">imagem 24 - Build concluido e realização do merge</p>
 
 Outro ponto importante, na aba `actions` é possível verificar todos os build que já ocorreram e os quais estão na fila executando.
 > Clicando no build também conseguimos visualizar de forma detalhada todas as configurações que acrescentamos para verificar na nossa integração continua.
 
 <p align="center"><img width="1336" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/7dd966ac-0f66-44fc-b6d4-2eee50999213"></p>
+<p align="center">imagem 25 - Visualizando builds no actions</p>
 
 
 ## Como criar um Job com Schedule?
@@ -306,7 +319,7 @@ No nosso projeto de arquitetura base, abordamos após a ingestão de dados armaz
 Para iniciarmos, primeiro vamos alterar o ambiente para o SQL, iremos na aba paineis e criar um novo dashboard, conforme a próxima imagem.
 
 <img width="1351" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/ffb6a3cb-6c52-41a3-aa5b-d90f5d44d149">
-
+<p align="center">imagem 26 - Interface de criação de dashboards</p>
 
 ---
 
