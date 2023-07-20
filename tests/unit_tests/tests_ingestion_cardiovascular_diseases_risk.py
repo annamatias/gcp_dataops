@@ -31,7 +31,7 @@ class PySparkTest(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         shutil.rmtree(
-            "/Users/annakarolinymatias/Documents/gcp_dataops/tests/storage_test")
+            "gcp_dataops/tests/storage_test")
         cls.spark.stop()
 
     @staticmethod
@@ -80,11 +80,11 @@ class PySparkTest(unittest.TestCase):
 
     def test_save_delta(self):
         data = PySparkTest.dataframe_mock(self.spark)
-        path = "/Users/annakarolinymatias/Documents/gcp_dataops/tests/storage_test"
+        path = "gcp_dataops/tests/storage_test"
         save_delta(data, path)
 
     def test_fail_read_csv(self):
-        path = "/Users/annakarolinymatias/Documents/gcp_dataops/"
+        path = "gcp_dataops/"
         with self.assertRaises(Exception):
             read_csv(self.spark, path)
 
