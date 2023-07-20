@@ -13,7 +13,7 @@ def setup_session():
     return spark
 
 
-def read_csv(spark, path="gcp_dataops/data_source/cardiovascular-diseases-risk.csv"):
+def read_csv(spark, path="data_source/cardiovascular-diseases-risk.csv"):
     logging.info("Realizando leitura arquivo csv")
     df = spark.read.format("csv").option("header", True).load(path)
     # pprint.pprint(df.show(10, False))
@@ -25,7 +25,7 @@ def rename_columns(df):
     return df.withColumnRenamed("Height_(cm)", "Height_cm").withColumnRenamed("Weight_(kg)", "Weight_kg")
 
 
-def save_delta(df, path_save="gcp_dataops/storage/hospital/rw/cardiovascular_diseases/"):
+def save_delta(df, path_save="storage/hospital/rw/cardiovascular_diseases/"):
     logging.info("Armazenando dados de forma particionada no storage cloud")
     df.write.format("delta").mode("overwrite").option("mergeSchema", "true").partitionBy(
         "General_Health").save(path_save)

@@ -80,11 +80,11 @@ class PySparkTest(unittest.TestCase):
 
     def test_save_delta(self):
         data = PySparkTest.dataframe_mock(self.spark)
-        path = "gcp_dataops/tests/storage_test"
+        path = "tests/storage_test"
         save_delta(data, path)
 
     def test_fail_read_csv(self):
-        path = "gcp_dataops/"
+        path = ""
         with self.assertRaises(Exception):
             read_csv(self.spark, path)
 
