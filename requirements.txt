@@ -1,3 +1,6 @@
+delta-spark==2.4.0
+importlib-metadata==6.8.0
+zipp==3.16.2
 certifi==2023.5.7
 charset-normalizer==3.2.0
 coverage==7.2.7
