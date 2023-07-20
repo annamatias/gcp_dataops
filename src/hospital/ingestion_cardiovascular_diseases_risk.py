@@ -1,18 +1,22 @@
-import pprint
+# import pprint
 import logging
-from databricks.connect import DatabricksSession
+from pyspark.sql import SparkSession
+from delta import configure_spark_with_delta_pip
 
 
 def setup_session():
-    logging.info("Iniciando sessão no Databricks")
-    return DatabricksSession.builder.getOrCreate()
+    builder = SparkSession.builder.appName("Ingestão Cardio") \
+        .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
+        .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
+
+    spark = configure_spark_with_delta_pip(builder).getOrCreate()
+    return spark
 
 
-def read_csv(spark):
+def read_csv(spark, path="/Users/annakarolinymatias/Documents/gcp_dataops/data_source/cardiovascular-diseases-risk.csv"):
     logging.info("Realizando leitura arquivo csv")
-    df = spark.read.format("csv").option("header", True).load(
-        "/tmp/cardiovascular-diseases-risk.csv")
-    pprint.pprint(df.show(10, False))
+    df = spark.read.format("csv").option("header", True).load(path)
+    # pprint.pprint(df.show(10, False))
     return df
 
 
@@ -21,10 +25,10 @@ def rename_columns(df):
     return df.withColumnRenamed("Height_(cm)", "Height_cm").withColumnRenamed("Weight_(kg)", "Weight_kg")
 
 
-def save_delta(df):
+def save_delta(df, path_save="/Users/annakarolinymatias/Documents/gcp_dataops/storage/hospital/rw/cardiovascular_diseases/"):
     logging.info("Armazenando dados de forma particionada no storage cloud")
     df.write.format("delta").mode("overwrite").option("mergeSchema", "true").partitionBy(
-        "General_Health").save("/hospital/rw/cardiovascular_diseases/")
+        "General_Health").save(path_save)
 
 
 def main():
