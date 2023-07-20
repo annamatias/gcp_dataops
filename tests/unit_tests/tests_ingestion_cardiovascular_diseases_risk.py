@@ -31,7 +31,7 @@ class PySparkTest(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         shutil.rmtree(
-            "gcp_dataops/tests/storage_test")
+            "tests/storage_test")
         cls.spark.stop()
 
     @staticmethod
