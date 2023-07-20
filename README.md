@@ -353,6 +353,8 @@ Em andamento.
   - <https://blog.cambridgespark.com/unit-testing-with-pyspark-fb31671b1ad8>
 - Data Viz
   - <https://learn.microsoft.com/pt-br/azure/databricks/sql/user/visualizations/>
+- CSV Cardiovascular
+  - <https://www.kaggle.com/datasets/alphiree/cardiovascular-diseases-risk-prediction-dataset?select=CVD_cleaned.csv>
 
 ---
 
