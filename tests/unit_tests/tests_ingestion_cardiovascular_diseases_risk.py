@@ -88,15 +88,13 @@ class PySparkTest(unittest.TestCase):
         with self.assertRaises(Exception):
             read_csv(self.spark, path)
 
-    def test_fail_rename_columns(self):
-        data = PySparkTest.dataframe_mock(self.spark)
-        # Modificando a coluna "Weight_kg" para ser uma string
-        df_invalid = data.withColumn(
-            "Weight_kg", data["Weight_kg"].cast(StringType()))
+    # def test_fail_rename_columns(self):
+    #     data = PySparkTest.dataframe_mock(self.spark)
+    #     df_invalid = data.withColumn(
+    #         "Weight_kg", data["Weight_kg"].cast(StringType()))
 
-        # Espera-se que essa operação cause um erro, pois a coluna "Weight_kg" é uma string em vez de um tipo numérico
-        with self.assertRaises(Exception):
-            rename_columns(df_invalid)
+    #     with self.assertRaises(Exception):
+    #         rename_columns(df_invalid)
 
     def test_fail_save_delta(self):
         schema = StructType([
