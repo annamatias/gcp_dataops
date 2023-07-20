@@ -168,7 +168,7 @@ Mas ele está pronto o nosso build, agora com a implementação do código e exe
 <p align="center"><img width="1347" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/d9d2da6f-8851-48b1-8f85-a403426a6794"></p>
 <p align="center">imagem 13 - Execução build pylint</p>
 
-# ETL
+# ELT/ETL
 
 ## Realizando Pull
 
@@ -273,19 +273,40 @@ Após gerar esse token, acrescentamos ele dentro do nosso databricks, para que s
 
 ## Abrindo pull request
 
-Após criarmos uma branch, adicionamos a mensagem da alteração e adicionamos, feito vai surgir um link de acesso a nossa PR (pull request), iremos acessar e finalizar o processo, conforme abaixo.
+Após criarmos uma branch, vamos colocar a mensagem da alteração e adicionamos, feito vai surgir um link de acesso a nossa PR (pull request), iremos acessar e finalizar o processo, conforme abaixo.
 
 <p align="center"><img width="1322" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/fc5f0f0d-03c8-46a4-a101-70bb7d090064"></p>
 
+Direcionando para o nosso Github, conseguimos visualizar o nosso pull request e em sequência vamos criar ele.
+
 <p align="center"><img width="926" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/895551a9-c1ff-489b-b4ca-b449b77984ad"></p>
+
+Depois de feito a PR, vamos esperar finalizar o nosso build e em seguida iremos completar o merge na `main`.
 
 <p align="center"><img width="930" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/2937f6f8-0601-499a-84a8-4317dcb98ee4"></p>
 
+Outro ponto importante, na aba `actions` é possível verificar todos os build que já ocorreram e os quais estão na fila executando.
+> Clicando no build também conseguimos visualizar de forma detalhada todas as configurações que acrescentamos para verificar na nossa integração continua.
+
 <p align="center"><img width="1336" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/7dd966ac-0f66-44fc-b6d4-2eee50999213"></p>
+
 
 ## Como criar um Job com Schedule?
 
 No canto superior esquerdo vamos em **Data science e engineering**, clique em `Workflows` para ver todos os jobs criados, e para criar um novo, você vai no canto superior direito em `Create Job`.
+
+
+# Data Visualization
+
+No nosso projeto de arquitetura base, abordamos após a ingestão de dados armazenado no storage a visualização de dados. Esse tema é muito extenso, podendo ter varias ferramentas para realizar a visualização de dados. Nesse projeto vamos utilizar o próprio Databricks para a visualização, mas poderiamos fazer dashboards atrativos sobre os dados em um PowerBI e entre outras ferramentas.
+
+
+## Dashboards no Databricks
+
+Para iniciarmos, primeiro vamos alterar o ambiente para o SQL, iremos na aba paineis e criar um novo dashboard, conforme a próxima imagem.
+
+<img width="1351" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/ffb6a3cb-6c52-41a3-aa5b-d90f5d44d149">
+
 
 ---
 
@@ -317,6 +338,8 @@ Em andamento.
 - Testes
   - <https://blog.devgenius.io/covering-unit-tests-running-in-sub-processes-threads-on-github-actions-using-coverage-py-825c3c4e08c1>
   - <https://blog.cambridgespark.com/unit-testing-with-pyspark-fb31671b1ad8>
+- Data Viz
+  - <https://learn.microsoft.com/pt-br/azure/databricks/sql/user/visualizations/>
 
 ---
 
