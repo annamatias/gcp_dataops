@@ -308,6 +308,95 @@ Outro ponto importante, na aba `actions` é possível verificar todos os build q
 
 No canto superior esquerdo vamos em **Data science e engineering**, clique em `Workflows` para ver todos os jobs criados, e para criar um novo, você vai no canto superior direito em `Create Job`.
 
+# Testes com Pyspark e Data Quality
+
+Abordando um assunto de extrema importancia, após passar por muitos processos acima que estão inclusos dentro do DataOps, temos um dos principais pilares. O Data Quality ele diz muito sobre a qualidade dos dados e testes que podem ser implementados para garantir que a informação que temos ela realmente é confiável.
+
+Temos esse artigo: <https://www.heavy.ai/technical-glossary/data-quality>, e ele é bem objetivo referente a Data Quality.
+De ferramentas temos algumas como o [Great Expectations](https://github.com/great-expectations/great_expectations) e o [PyDeequ](https://github.com/awslabs/python-deequ), ambas na linguagem Python, é claro que pode ter outras, mas essas duas é a mais falada.
+
+Indo para a prática dos testes, primeiro eu peguei o código de ELT do notebook e consolidei em um arquivo.py com os métodos isolados para executar localmente e testar-los. Partindo desse principio, vamos alterar o nosso build para testarmos o nosso código.
+
+Antes disso, para executar o nosso código, foi necessário realizar a instalação de algumas dependências. Caso tenha feito o clone desse repositório, você pode apenas instalar os requeriments e já ter acesso a todas as instalações.
+
+- `pip install delta-spark `
+- `pip install pyspark`
+
+Feito as instalações acima, acredito que não falte mais nada, então iremos para a correção do nosso build. O que teremos de diferente é o `coverage`, ele serve para verificar se estamos com a cobertura 100% de testes para os nossos códigos e utilizamos ele para verificar se ele executou com sucesso, erro ou falha os testes. Adicionamos aqui também um ignore em um erro de linha maior no flake8 e estou ignorando a pasta de notebooks, no meu caso não tem porque deixar rodar o lint nele porque é mais um arquivo de testes.
+
+```yaml
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install flake8 coverage
+          pip install -r requirements.txt
+      - name: Lint with flake8
+        run: |
+          flake8 --ignore=E501 src/ tests/ --exclude=src/notebooks
+      - name: Run unit tests and generate coverage report
+        run: |
+          coverage run -m unittest -v
+          coverage report
+          coverage html
+
+```
+Subindo esse código já vamos ter um build com testes, sempre quando subirmos um push, ele será feito esse build. Falando sobre a construção de testes em pyspark, eu sempre sigo um tutorial da [Cambridge](https://blog.cambridgespark.com/unit-testing-with-pyspark-fb31671b1ad8), ele é bem objetivo e ele diz sobre uma estrutura base para podermos rodar os nossos testes. 
+
+- Logger, para rastrear erros em nivel de loggers (aqui diz muito sobre data observability.
+- setUpClass, para criarmos uma sessão no spark, dentro dele iremos executar o nosso código spark.
+- tearDownClass, ele serve para apargarmos os arquivos criados temporariamente e finalizar a sessão do spark para não ficar executando infinitamente.
+
+Podendo visualizar o código dessa forma:
+```python
+class PySparkTest(unittest.TestCase):
+
+    @classmethod
+    def suppress_py4j_logging(cls):
+        logger = logging.getLogger("py4j")
+        logger.setLevel(logging.WARN)
+
+    @classmethod
+    def create_testing_pyspark_session(cls):
+        builder = SparkSession.builder \
+            .appName("Testes Pyspark") \
+            .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
+            .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
+        spark = configure_spark_with_delta_pip(builder).getOrCreate()
+        return spark
+
+    @classmethod
+    def setUpClass(cls):
+        cls.suppress_py4j_logging()
+        cls.spark = cls.create_testing_pyspark_session()
+
+    @classmethod
+    def tearDownClass(cls):
+        shutil.rmtree(
+            "tests/storage_test")
+        cls.spark.stop()
+```
+
+Se vocês observarem no artigo indicado, sendo ele nossa base para testes, eu fiz algumas adaptações e elas estão descritas no próprio site do [Delta](https://delta.io/learn/getting-started), para executarmos funcionalidades do Delta, além de instalarmos temos que subir algumas configurações no spark para ele reconhecer e executar de forma correta. Portanto é possível ver a diferença no nosso setup com configurações especificas direcionada ao Delta. Outro ponto importante, essa configuração ela é especifica para a instalação via pip, conforme o guia de instalação do próprio site da Delta Table.
+
+Construindo alguns testes com unittest, não fica muito diferente do python tradicional (no caso, sem a utilização de algum framework), que é possivel verificar nessa pasta do repositório o código completo <https://github.com/annamatias/gcp_dataops/blob/main/tests/unit_tests/tests_ingestion_cardiovascular_diseases_risk.py>
+
+Feito os testes, subimos uma PR e assim que subimos já podemos verificar o push, se foi com sucesso ou não. Detalhe tem todas as ocorrências possiveis de execução no nosso build, e fica tão satisfatório de ver. Deixo aqui um exemplo de build com testes.
+
+<p align="center"><img width="1326" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/f801f4ba-ec89-479a-b96f-6dee63c790e8"></p>
+<p align="center">imagem 26 - Build testes com coverage</p>
 
 # Data Visualization
 
@@ -321,11 +410,13 @@ Para iniciarmos, primeiro vamos alterar o ambiente para o SQL, iremos na aba pai
 <img width="1351" alt="image" src="https://github.com/annamatias/gcp_dataops/assets/53863170/ffb6a3cb-6c52-41a3-aa5b-d90f5d44d149">
 <p align="center">imagem 26 - Interface de criação de dashboards</p>
 
+Aqui tem muitas possibilidades, você pode instalar alguns exemplos de dash e refazer no seu. Você pode criar paineis a partir de uma consulta SQL com a visualização que é a melhor para transmitir um determinado objetivo. Lembrando que visualização de dados não é apenas criar dashboards, é transmitir de uma forma bonita, legivel, objetiva o verdadeiro valor da informação.
+
 ---
 
 # Status do Projeto
 
-Em andamento.
+Finalizado.
 
 # Arquitetura Base
 
